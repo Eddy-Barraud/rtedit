@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="uft8">
+		<title>Real Time Editor</title>
+	</head>
+
+	<body>
+		<input type="text" onkeypress="if (event.keyCode === 13) {window.location = event.target.value;}" autofocus placeholder="Enter id">
+		<button onclick="window.location = Math.random().toString(36).substr(2)">Open random new</button>
+	</body>
+
+</html>

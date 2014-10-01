@@ -1,0 +1,285 @@
+/* General styling
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+html, body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+/* Page layout
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+#header {
+  font: 14px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 25px;
+	line-height: 25px;
+	border-bottom: 1px solid #222;
+	background-color: #2F3129;
+	padding: 0 8px;
+	color: #ccc;
+	z-index: 5;
+}
+
+#container {
+  position: absolute;
+  top: 25px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  right: 0;
+}
+
+#editor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 14px;
+}
+
+/*
+#preview {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+/* Pretty scrollbars
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+::-webkit-scrollbar       { width: 7px; height: 7px; }
+::-webkit-scrollbar-thumb { border-radius: 10px; background: #444; }
+
+
+/* Resize by dragging
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+#drag-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  right: -10px;
+  z-index: 9999;
+}
+
+#drag-handle.enabled {
+  cursor: col-resize;
+}
+
+#drag-handle.dragging {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+}
+
+.resizing * {
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+       -o-user-select: none;
+          user-select: none;
+  -webkit-transition: none !important;
+     -moz-transition: none !important;
+       -o-transition: none !important;
+          transition: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 9999;
+}
+
+#loader img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+/*
+#filename {
+	font-family: inherit;
+	outline: none;
+	border: none;
+	background-color: inherit;
+	color: inherit;
+	width: 300px;
+}
+
+#filename-suggestions {
+	background-color: inherit;
+	width: 300px;
+	margin: 0 -8px;
+	border-top: 1px solid #222;
+	border-right: 1px solid #222;
+}
+
+#filename-suggestions div {
+	padding: 0 8px;
+	border-bottom: 1px solid #222;
+	cursor: default;
+}
+*/
+
+#user-count-icon {
+	width: 16px;
+	height: 16px;
+	/*-webkit-filter: invert(65%);*/
+	margin-top: 3px;
+	margin-bottom: -3px;
+}
+
+
+.pull-right {
+	float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#spinner {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 9999;
+}
+
+#spinner img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+
+
+
+
+/*
+#select-mode {
+ background: transparent;
+ width: 268px;
+ padding: 5px;
+ font-size: 16px;
+ line-height: 1;
+ border: 0;
+ border-radius: 0;
+ height: 34px;
+ -webkit-appearance: none;
+ color: white;
+}
+*/
+
+#select-mode {
+  font: inherit;
+  background-color: #2F3129;
+  border: 1px solid #555;
+  color: #ddd;
+}
+
+
+#preview-iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+#preview-text {
+  font-family: sans-serif;
+  font: 16px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  padding: 0 10px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
