@@ -48,6 +48,7 @@
       'markdown': function(el) {
         resize(0.55);
         toggleDragHandle(true);
+
         var md2html = (new Markdown.Converter()).makeHtml;
         var inner = document.createElement('div');
         inner.setAttribute('id', 'preview-text');
@@ -56,6 +57,57 @@
           inner.innerHTML = md2html(editor.getValue().replace(/\\\[/g, '\\\\[').replace(/\\\]/g, '\\\\]'));
           MathJax.Hub.Queue(['Typeset', MathJax.Hub, inner]);
         };
+      },
+      'latex': function(el) {
+        resize(0.55);
+        toggleDragHandle(true);
+
+        var form = document.createElement('form');
+        form.setAttribute('method', 'post');
+        form.setAttribute('action', 'http://www.tlhiv.org/ltxpreview/ltxpreview.cgi');
+        form.setAttribute('target', 'preview-iframe');
+
+        var params = { // The order seems to be important.
+          width: '',
+          height: '',
+          ltx: '',
+          ltxsource: 'this is awesome',
+          result: 'preview',
+          init: ''
+        };
+
+        for (var key in params) {
+          if (params.hasOwnProperty(key)) {
+            var hiddenField = document.createElement('input');
+            hiddenField.setAttribute('type', 'hidden');
+            hiddenField.setAttribute('name', key);
+            hiddenField.setAttribute('value', params[key]);
+            form.appendChild(hiddenField);
+          }
+        }
+
+        document.body.appendChild(form);
+
+        // Create preview element.
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('name', 'preview-iframe');
+        iframe.setAttribute('id', 'preview-iframe');
+        iframe.setAttribute('seamless', true);
+        el.appendChild(iframe);
+
+        var updateScheduled = false;
+
+        return function() {
+          if (!updateScheduled) {
+            updateScheduled = true;
+            setTimeout(function() {
+              updateScheduled = false;
+              form.ltxsource.value = editor.getValue();
+              form.submit();
+            }, 3000);
+          }
+        };
+
       }
     }
   };
