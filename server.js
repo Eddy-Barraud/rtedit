@@ -5,7 +5,7 @@ var sharejs = require('share');
 
 var app = express();
 var http = require('http').Server(app);
-var port = process.argv[3] || 8080;
+var port = process.argv[3] || process.env.PORT || 8080;
 
 app.use('/', express.static(__dirname + '/public'));
 
