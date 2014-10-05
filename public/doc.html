@@ -1,66 +1,66 @@
 <!doctype html>
 <html>
 
-	<head>
-		<meta charset="uft8">
-		<title>Real Time Editor</title>
-		<link href="/css/doc.css" rel="stylesheet" type="text/css">
-	</head>
+  <head>
+    <meta charset="uft8">
+    <title>Real-Time Editor</title>
+    <link href="/css/doc.css" rel="stylesheet" type="text/css">
+  </head>
 
-	<body>
+  <body>
 
-		<div id="container">
+    <div id="container">
 
-		  <div id="left">
+      <div id="left">
 
-				<div id="header">
-					<div class="pull-right">
-						<span id="log"></span>
-						<!-- <img id="user-count-icon" src="/img/fa-users_cccccc_64px.png"></img> -->
-						<!-- <span id="user-count"></span> -->
-					</div>
-					<select id="select-mode">
-						<option value="text">Plain text</option>
-						<option value="markdown">Markdown with MathJax</option>
-						<option value="html">HTML</option>
-						<option value="latex">LaTeX</option>
-						<option value="javascript">Javascript</option>
-						<option value="python">Python</option>
-						<option value="scheme">Scheme</option>
-					</select>
-					<!-- <input type="text" id="filename" placeholder="Enter file name" autofocus spellcheck="false"> -->
-					<!-- <div id="filename-suggestions"></div> -->
-				</div>
+        <div id="header">
+          <div class="pull-right">
+            <span id="log"></span>
+            <!-- <img id="user-count-icon" src="/img/fa-users_cccccc_64px.png"></img> -->
+            <!-- <span id="user-count"></span> -->
+          </div>
+          <select id="select-mode">
+            <option value="text">Plain text</option>
+            <option value="markdown">Markdown with MathJax</option>
+            <option value="html">HTML</option>
+            <option value="latex">LaTeX</option>
+            <option value="javascript">Javascript</option>
+            <option value="python">Python</option>
+            <option value="scheme">Scheme</option>
+          </select>
+          <!-- <input type="text" id="filename" placeholder="Enter file name" autofocus spellcheck="false"> -->
+          <!-- <div id="filename-suggestions"></div> -->
+        </div>
 
-		    <div id="editor"></div>
-		    <div id="drag-handle"></div>
-		  </div>
+        <div id="editor"></div>
+        <div id="drag-handle"></div>
+      </div>
 
-		  <div id="right"></div>
+      <div id="right"></div>
 
-		</div>
+    </div>
 
-		<!-- <div id="spinner"><img src="/img/spinner.gif"></div> -->
+    <!-- <div id="spinner"><img src="/img/spinner.gif"></div> -->
 
-		<script src="/lib/ace/ace.js"></script>
-		<script src="/lib/ace/ext-modelist.js"></script>
+    <script src="/lib/ace/ace.js"></script>
+    <script src="/lib/ace/ext-modelist.js"></script>
     <script src="/channel/bcsocket.js"></script>
-		<script src="/share/share.js"></script>
-		<script src="/share/json.js"></script>
-		<script src="/share/ace.js"></script>
-		<!-- <script src="/socket.io/socket.io.js"></script> -->
+    <script src="/share/share.js"></script>
+    <script src="/share/json.js"></script>
+    <script src="/share/ace.js"></script>
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
 
-		<!-- Markdown -->
-		<script src="/lib/markdown/Markdown.Converter.js"></script>
+    <!-- Markdown -->
+    <script src="/lib/markdown/Markdown.Converter.js"></script>
 
-		<!-- MathJax -->
-		<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured"></script>
-		<script src="/js/mathjax-config.js"></script>
+    <!-- MathJax -->
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured"></script>
+    <script src="/js/mathjax-config.js"></script>
 
-		<!-- Main -->
-		<script src="/js/doc.js"></script>
+    <!-- Main -->
+    <script src="/js/doc.js"></script>
 
 
-	</body>
+  </body>
 
 </html>
