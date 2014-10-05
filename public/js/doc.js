@@ -54,7 +54,7 @@
         inner.setAttribute('id', 'preview-text');
         el.appendChild(inner);
         return function() {
-          inner.innerHTML = md2html(editor.getValue().replace(/\\\[/g, '\\\\[').replace(/\\\]/g, '\\\\]'));
+          inner.innerHTML = md2html(editor.getValue().replace(/\\/g, '\\\\'));
           MathJax.Hub.Queue(['Typeset', MathJax.Hub, inner]);
         };
       },
