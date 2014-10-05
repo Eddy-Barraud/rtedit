@@ -41,7 +41,6 @@ html, body {
   background-color: #2F3129;
   padding: 0 8px;
   color: #ccc;
-  z-index: 5;
 }
 
 #editor {
@@ -59,7 +58,6 @@ html, body {
   bottom: 0;
   left: 100%;
   right: 0;
-  z-index: 10;
   background-color: #fff;
 }
 
@@ -81,7 +79,7 @@ html, body {
   bottom: 0;
   width: 20px;
   right: -10px;
-  z-index: 6;
+  z-index: 1;
 }
 
 #drag-handle.enabled {
@@ -140,8 +138,6 @@ html, body {
   left: 0;
   right: 0;
   overflow: auto;
-  z-index: 999;
-  text-align: justify;
 }
 
 #user-count-icon {
@@ -155,7 +151,6 @@ html, body {
 .pull-right {
 	float: right;
 }
-
 
 /*
 #spinner {
@@ -194,6 +189,7 @@ html, body {
     bottom: auto !important;
     left: auto !important;
     right: auto !important;
+    text-align: justify;
   }
 
 }
