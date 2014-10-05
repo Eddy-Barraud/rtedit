@@ -7,6 +7,7 @@ MathJax.Hub.Config({
   },
   "HTML-CSS": {
     showMathMenu: false,
+    scale: 85,
     availableFonts: ["TeX"] // Force pretty font, very important for me!
   },
   TeX: {
