@@ -28,7 +28,7 @@
   var rtedit = window.rtedit = {
     onMode: {
       'html': function(el) {
-        resize(0.55);
+        resize(0.5);
         toggleDragHandle(true);
 
         // Create preview element.
@@ -46,7 +46,7 @@
         };
       },
       'markdown': function(el) {
-        resize(0.55);
+        resize(0.5);
         toggleDragHandle(true);
 
         var md2html = (new Markdown.Converter()).makeHtml;
@@ -59,7 +59,7 @@
         };
       },
       'latex': function(el) {
-        resize(0.55);
+        resize(0.5);
         toggleDragHandle(true);
 
         var form = document.createElement('form');
