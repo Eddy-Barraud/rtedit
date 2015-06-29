@@ -268,3 +268,17 @@ function setUpResizeByDrag(left, right, container, dragHandle, afterResizeCallba
   });
 
 }
+
+
+
+// Keep alive
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+function keepAlive() {
+  console.log('keepAlive()');
+  var request = new XMLHttpRequest();
+  request.open('GET', window.location.origin);
+  request.send();
+}
+
+setInterval(keepAlive, 5*60*1000);
