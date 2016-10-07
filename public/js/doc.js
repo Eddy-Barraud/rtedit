@@ -1,6 +1,6 @@
 /* global sharejs, io, ace, MathJax, Markdown */
 
-// (function() {
+
 
   var left = document.getElementById('left');
   var right = document.getElementById('right');
@@ -211,7 +211,7 @@
   };
 
 
-// }());
+
 
 window.rtedit.init();
 
@@ -282,3 +282,32 @@ function keepAlive() {
 }
 
 setInterval(keepAlive, 5*60*1000);
+
+// Download 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// What will actually be put into the file
+var content, MIME_TYPE, theBlob, a;
+
+var content = editor.getValue();
+
+// The file type
+MIME_TYPE = "Application/octet-stream";
+// Basically, the file itself
+theBlob = new Blob([content], {type: MIME_TYPE});
+
+// The anchor element
+a = document.createElement("a");
+// Set the name of the file that will be downloaded
+a.download = "index.html";
+// Set the contents to be downloaded
+a.href = window.URL.createObjectURL(theBlob);
+// Anchor's text
+a.textContent = "Download";
+
+// What's displayed as the URL of the anchor (when hovered, copied, etc.)
+a.dataset.downloadurl = [MIME_TYPE, a.download, a.href].join(":");
+
+// Add the anchor to the page
+//document.body.appendChild(a);
+document.getElementById("header").appendChild(a);
